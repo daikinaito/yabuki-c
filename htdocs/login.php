@@ -1,5 +1,6 @@
 <?php
-    ini_set('mbstring.internal_encoding' , 'UTF-8');
+ini_set('mbstring.internal_encoding' , 'UTF-8');
+header('Content-Type: text/html; charset=UTF-8');
     if(isset($_POST['id']) and isset($_POST['password'])){
 
         require_once 'database_conf.php';
