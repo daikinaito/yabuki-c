@@ -11,7 +11,7 @@
   <body>
 <?php
 try{
-$sql = 'SELECT * FROM a WHERE 1';
+$sql = 'SELECT * FROM users WHERE 1';
 
 require_once 'database_conf.php';
 
