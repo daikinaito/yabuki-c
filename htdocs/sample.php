@@ -10,6 +10,7 @@
   </head>
   <body>
 <?php
+try{
 $sql = 'SELECT * FROM a WHERE 1';
 
 require_once 'database_conf.php';
@@ -28,6 +29,9 @@ foreach ($result as $person) {
   echo "<tr><td>$id</td><td>$name</td><td>$password</td></tr>";
 }
 echo '</table>';
+}catch (Exception $e) {
+    echo '捕捉した例外: ',  $e->getMessage(), "\n";
+}
 ?>
  </body>
 </html>
