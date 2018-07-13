@@ -19,13 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `yabukic`
+-- Database: `mydb`
 --
 
 -- --------------------------------------------------------
-DROP DATABASE IF EXISTS `mydb`;
-CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `mydb`;
 --
 -- テーブルの構造 `attendances`
 --
@@ -41,15 +38,6 @@ CREATE TABLE `attendances` (
 --
 
 INSERT INTO `attendances` (`id`, `subjectId`, `userId`) VALUES
-(1, 1, '1642001'),
-(2, 1, '1642001'),
-(3, 1, '1642001'),
-(4, 1, '1642001'),
-(5, 1, '1642001'),
-(6, 1, '1642001'),
-(7, 1, '1642001'),
-(8, 1, '1642001'),
-(9, 1, '1642001');
 
 -- --------------------------------------------------------
 
