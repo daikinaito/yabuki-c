@@ -1,10 +1,9 @@
 <?php
 //データベース接続設定
 $dbServer = '127.0.0.1';
-$dbName = 'sample1';
-$dsn = "mysql:host={$dbServer};dbname={$dbName};charset=utf8";
-$dbUser = 'test';
-$dbPass = 'pass';
+$dbUser = $_SERVER['MYSQL_USER'];
+$dbPass = $_SERVER['MYSQL_PASSWORD'];
+$dbName = $_SERVER['MYSQL_DB'];;
 
 //データベースへの接続
 $db = new PDO($dsn, $dbUser, $dbPass);
