@@ -10,7 +10,7 @@
   </head>
   <body>
 <?php
-$sql = 'SELECT * FROM users WHERE 1';
+$sql = 'SELECT * FROM subjects WHERE 1';
 
 require_once 'database_conf.php';
 
@@ -23,8 +23,8 @@ echo '<table>';
 echo '<tr><th>id</th><th>名前</th><th>パスワード</th>';
 foreach ($result as $person) {
   $id = $person['id'];
-  $name = $person['name'];
-  $password = $person['password'];
+  $name = $person['userId'];
+  $password = $person['period'];
   echo "<tr><td>$id</td><td>$name</td><td>$password</td></tr>";
 }
 echo '</table>';
