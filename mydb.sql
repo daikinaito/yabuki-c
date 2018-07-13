@@ -21,9 +21,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `sample1`
 --
-DROP DATABASE IF EXISTS `sample1`;
-CREATE DATABASE IF NOT EXISTS `sample1` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `sample1`;
+DROP DATABASE IF EXISTS `mydb`;
+CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `mydb`;
 
 -- --------------------------------------------------------
 
