@@ -10,7 +10,7 @@
   </head>
   <body>
 <?php
-$sql = 'SELECT * FROM users WHERE 1'
+$sql = 'SELECT * FROM users WHERE 1';
 
 require_once 'database_conf.php';
 
