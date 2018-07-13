@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mydb`
+-- Database: `yabukic`
 --
 
 -- --------------------------------------------------------
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 -- テーブルの構造 `attendances`
 --
 
+DROP TABLE IF EXISTS `attendances`;
 CREATE TABLE `attendances` (
   `id` int(11) NOT NULL,
   `subjectId` int(11) NOT NULL,
@@ -55,6 +56,7 @@ INSERT INTO `attendances` (`id`, `subjectId`, `userId`) VALUES
 -- テーブルの構造 `passwords`
 --
 
+DROP TABLE IF EXISTS `passwords`;
 CREATE TABLE `passwords` (
   `id` int(11) NOT NULL,
   `date` date NOT NULL,
@@ -76,6 +78,7 @@ INSERT INTO `passwords` (`id`, `date`, `subjectId`, `password`) VALUES
 -- テーブルの構造 `subjects`
 --
 
+DROP TABLE IF EXISTS `subjects`;
 CREATE TABLE `subjects` (
   `id` int(11) NOT NULL,
   `userId` varchar(8) NOT NULL,
@@ -100,6 +103,7 @@ INSERT INTO `subjects` (`id`, `userId`, `period`, `name`) VALUES
 -- テーブルの構造 `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` varchar(8) NOT NULL,
   `name` varchar(100) NOT NULL,
