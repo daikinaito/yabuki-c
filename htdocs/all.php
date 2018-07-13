@@ -12,7 +12,7 @@ $dsn = "mysql:host={$dbServer};dbname={$dbName};charset=utf8";
 $db = new PDO($dsn, $dbUser, $dbPass);
 
 //検索実行
-$sql = 'SELECT * FROM subjects';
+$sql = 'SELECT * FROM members';
 $prepare = $db->prepare($sql);
 $prepare->execute();
 $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
