@@ -1,11 +1,11 @@
 <?php
+header('Content-Type: text/html; charset=UTF-8');
 session_start();
 if(isset($_SESSION['login'])==false)
 {
   header('Location: false.html');
 }
-?>
-<?php
+
         require_once 'database_conf.php';
         
         $db = new PDO($dsn, $dbUser, $dbPass);

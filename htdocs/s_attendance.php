@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=UTF-8');
 $sql = 'SELECT passwords.date AS "日付", subjects.period AS "時限" ,subjects.name AS "授業名" 
 FROM attendances, subjects 
 WHERE attendances.userid = users.id AND attendances.subjectId = subjects.id
