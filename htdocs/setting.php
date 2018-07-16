@@ -7,7 +7,7 @@ if(isset($_SESSION['login'])==false)
 }
 
         require_once 'database_conf.php';
-        
+        $sql = 'select * from subjects';
         $db = new PDO($dsn, $dbUser, $dbPass);
         $stmt = $db->prepare($sql);
         $stmt->execute();
