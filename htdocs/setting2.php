@@ -19,7 +19,7 @@ require_once 'database_conf.php';
         
       while(true){
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            if($row['password'] == $_POST['password']){
+            if($row['password'] === $_POST['password']){
               echo 'すでに使用されています';
               break;
             }else{
