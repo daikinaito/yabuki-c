@@ -24,6 +24,9 @@ require_once 'database_conf.php';
               header('Location: already.html');
               break;
             }
+            if ($row==false) {
+              break;
+            }
             echo $row['password'];
             
           }
