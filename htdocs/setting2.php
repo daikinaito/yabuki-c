@@ -35,6 +35,9 @@ require_once 'database_conf.php';
           $data[] =  $subjectId; 
           $data[] =  $_POST['password'];
           $stmt->execute($data);
+          if ($stmt==true) {
+            echo 'ok';
+          }
           // header('Location: t_confirm.html');
           
 }catch(Exception $e){
