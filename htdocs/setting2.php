@@ -24,6 +24,7 @@ require_once 'database_conf.php';
               header('Location: already.html');
               break;
             }
+            echo $row['password'];
             
           }
           $sql = 'INSERT INTO passwords (subjectId, date, password) values (?, now(), ?)';
