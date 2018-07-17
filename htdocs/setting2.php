@@ -13,13 +13,26 @@ require_once 'database_conf.php';
         $db = new PDO($dsn, $dbUser, $dbPass);
         
         $subjectId =  $_POST['names'];
-
-        $sql = 'INSERT INTO passwords (subjectId, date, password) values (?, now(), ?)';
+        $sql = 'SELECT password FROM passwords';
         $stmt = $db->prepare($sql);
-        $data[] =  $subjectId; 
-        $data[] =  $_POST['password'];
-        $stmt->execute($data);
-        header('Location: t_confirm.html');
+        $stmt->execute();
+        
+      while(true){
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if($row['password'] == $_POST['password']){
+              echo 'すでに使用されています';
+              break;
+            }else{
+              $sql = 'INSERT INTO passwords (subjectId, date, password) values (?, now(), ?)';
+              $stmt = $db->prepare($sql);
+              $data[] =  $subjectId; 
+              $data[] =  $_POST['password'];
+              $stmt->execute($data);
+              header('Location: t_confirm.html');
+            }
+        
+      }
+        
 }catch(Exception $e){
   echo '捕捉した例外: ',  $e->getMessage(), "\n";
 }
