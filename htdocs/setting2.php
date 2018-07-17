@@ -26,7 +26,7 @@ require_once 'database_conf.php';
           $data[] =  $_POST['password'];
           $stmt->execute($data);
             header('Location: t_confirm.html');
- }
+ }else{echo 'このパスワードは使用できません';}
           
           
 }catch(Exception $e){
