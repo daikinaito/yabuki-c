@@ -19,20 +19,19 @@ require_once 'database_conf.php';
         
       while(true){
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            if($row['password'] === $_POST['password']){
+            if($row['password'] == $_POST['password']){
               echo 'すでに使用されています';
               break;
-            }else{
-              $sql = 'INSERT INTO passwords (subjectId, date, password) values (?, now(), ?)';
-              $stmt = $db->prepare($sql);
-              $data[] =  $subjectId; 
-              $data[] =  $_POST['password'];
-              $stmt->execute($data);
-              header('Location: t_confirm.html');
             }
-        
-      }
-        
+            
+          }
+          $sql = 'INSERT INTO passwords (subjectId, date, password) values (?, now(), ?)';
+          $stmt = $db->prepare($sql);
+          $data[] =  $subjectId; 
+          $data[] =  $_POST['password'];
+          $stmt->execute($data);
+          header('Location: t_confirm.html');
+          
 }catch(Exception $e){
   echo '捕捉した例外: ',  $e->getMessage(), "\n";
 }
