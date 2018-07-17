@@ -1,4 +1,5 @@
 <?php
+try{
 header('Content-Type: text/html; charset=UTF-8');
 session_start();
 if(isset($_SESSION['login'])==false)
@@ -19,4 +20,7 @@ require_once 'database_conf.php';
         $data[] =  $_POST['password'];
         $stmt->execute($data);
         header('Location: t_confirm.html');
+}catch(Exception $e){
+  echo '捕捉した例外: ',  $e->getMessage(), "\n";
+}
 ?>
