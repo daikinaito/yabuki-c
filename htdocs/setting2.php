@@ -22,7 +22,7 @@ require_once 'database_conf.php';
             if($row['password'] == $_POST['password']){
 
               header('Location: already.html');
-              break;
+
             }
             if ($row==false) {
               break;
