@@ -21,6 +21,7 @@ require_once 'database_conf.php';
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
             if($row['password'] == $_POST['password']){
               echo 'すでに使用されています';
+              header('Location: already.html');
               break;
             }
             
