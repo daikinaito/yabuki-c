@@ -37,7 +37,7 @@ if(isset($_SESSION['login'])==false)
             <?php } ?>
         </select><br/>
         <a>出席パスワード</a><br/>
-        <input type="text" name="password"><br>
+        <input type="text" name="password" placeholder="出席パスワード"><br>
         <button type=submit>送信</button>
     </form> 
     <a href="teacher_menu.php">メニュー画面へ</a>
