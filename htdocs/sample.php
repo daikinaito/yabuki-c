@@ -27,6 +27,7 @@ foreach ($result as $person) {
   $name = $person['userId'];
   $password = $person['period'];
   echo "<tr><td>$id</td><td>$name</td><td>$password</td></tr>";
+  
 }
 echo '</table>';
 }catch (Exception $e) {
