@@ -20,14 +20,14 @@ if(isset($_SESSION['login'])==false)
 <head>
     <meta charset="utf-8">
     <title>出席パスワード設定</title>
-    
+
 </head>
 <body>
     <h1>出席パスワード設定</h1>
-    <form action="setting2.php" method="POST">
+    <form action="setting2.php" method="POST" autocomplete="off">
         <a>授業名[限目]</a><br/>
-        <select name="names">       
-         <?php foreach ($result as $value) { 
+        <select name="names">
+         <?php foreach ($result as $value) {
              $period = $value['period'];
              $name = $value['name'];
              $id = $value['id']?>
@@ -37,7 +37,7 @@ if(isset($_SESSION['login'])==false)
             <?php } ?>
         </select><br/>
         <a>出席パスワード</a><br/>
-        <input type="text" name="password"><br>
+        <input type="text" name="password" placeholder="出席パスワード"><br>
         <button type=submit>送信</button>
     </form> 
     <a href="teacher_menu.php">メニュー画面へ</a>

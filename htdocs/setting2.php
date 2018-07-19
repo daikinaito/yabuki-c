@@ -11,7 +11,7 @@ if(isset($_SESSION['login'])==false)
 require_once 'database_conf.php';
 
         $db = new PDO($dsn, $dbUser, $dbPass);
-        
+
         $subjectId =  $_POST['names'];
         $sql = 'SELECT password FROM passwords WHERE password=?';
         $stmt = $db->prepare($sql);
@@ -22,13 +22,12 @@ require_once 'database_conf.php';
         if(empty($row))
  {         $sql = 'INSERT INTO passwords (subjectId, date, password) values (?, now(), ?)';
           $stmt = $db->prepare($sql);
-          $data[] =  $subjectId; 
+          $data[] =  $subjectId;
           $data[] =  $_POST['password'];
           $stmt->execute($data);
             header('Location: t_confirm.html');
  }else{echo 'このパスワードは使用できません';}
-          
-          
+
 }catch(Exception $e){
   echo '捕捉した例外: ',  $e->getMessage(), "\n";
 }

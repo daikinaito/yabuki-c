@@ -36,12 +36,6 @@ foreach ($result as $person) {
   $date = $person['date'];
   $period = $person['period'];
   $name = $person['name'];
-  // echo $date;
-  // echo ',';
-  // echo $period;
-  // echo ',';
-  // echo $name;
-  // echo '<br/>';
   echo "<tr><td>$date</td><td>$period</td><td>$name</td></tr>";
 }
 echo '</table>';

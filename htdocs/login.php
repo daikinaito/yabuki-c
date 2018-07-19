@@ -14,14 +14,12 @@ header('Content-Type: text/html; charset=UTF-8');
                 $password = $row['password'];
                 $teacherFlag = $row['teacherFlag'];
 
-                
-            
             if($password === $_POST['password']){
 
                 session_start();
                 $_SESSION['id'] = $_POST['id']; 
                 $_SESSION['login']=1;
-                
+
                 if($teacherFlag == 1){
                     header('Location: teacher_menu.php');
                 }else{
@@ -34,5 +32,4 @@ header('Content-Type: text/html; charset=UTF-8');
             }
     }
 
-    
 ?>
