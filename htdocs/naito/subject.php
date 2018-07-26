@@ -14,6 +14,11 @@ $db = new PDO($dsn, $dbUser, $dbPass);
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             echo $row['userId'];
+            echo "<br />";
+            echo $row['period'];
+            echo "<br />";
+            echo $row['name'];
+            echo "<br />";
             // foreach ($row as $subject) {
             //     $date = $subject['userId'];
             //     $period = $subject['period'];
