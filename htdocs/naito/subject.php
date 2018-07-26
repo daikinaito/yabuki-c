@@ -9,7 +9,7 @@ $dsn = "mysql:host={$dbServer};dbname={$dbName};charset=utf8";
 $db = new PDO($dsn, $dbUser, $dbPass);
             $sql = 'SELECT * FROM subjects WHERE id = ?';
             $stmt = $db->prepare($sql);
-            $stmt->bindValue(1, $_GET[‘id’]);
+            $stmt->bindValue(1, $_GET['id']);
             $stmt->execute();
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
