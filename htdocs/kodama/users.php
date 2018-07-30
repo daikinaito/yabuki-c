@@ -12,10 +12,10 @@ $dbServer = '127.0.0.1';
         $dbName =$_SERVER[ 'MYSQL_DB'];
         $dsn = "mysql:host={$dbServer};dbname={$dbName};charset=utf8";
         $dbUser = $_SERVER['MYSQL_USER'];
-        $dbPass = $_SERVER['MYSQL_DB'];
+        $dbPass = $_SERVER['MYSQL_PASSWORD'];
         $db = new PDO($dsn, $dbUser, $dbPass);
         
-        $sql = 'SELECT * FROM users WHERE id = ?';
+        $sql = 'SELECT * FROM users WHERE id = :id';
         $stmt = $db->prepare($sql);
         $stmt->bindValue('id',$id,PDO::PARAM_INT);
         $stmt->execute();
