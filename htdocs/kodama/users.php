@@ -14,12 +14,14 @@ $dbServer = '127.0.0.1';
         $dbUser = $_SERVER['MYSQL_USER'];
         $dbPass = $_SERVER['MYSQL_PASSWORD'];
         $db = new PDO($dsn, $dbUser, $dbPass);
+
+        $id=$_GET['foo'];
         
         $sql = 'SELECT * FROM users WHERE id = :id';
-        $stmt = $db->prepare($sql);
-        $stmt->bindValue('id',$id,PDO::PARAM_INT);
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $prepare = $db->prepare($sql);
+        $prepare->bindValue(':id',$id,PDO::PARAM_INT);
+        $prepare->execute();
+        $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($result as $person) {
                 echo $person['id'];
