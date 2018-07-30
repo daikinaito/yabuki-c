@@ -15,7 +15,7 @@ $dbServer = '127.0.0.1';
         $dbPass = $_SERVER['MYSQL_DB'];
         $db = new PDO($dsn, $dbUser, $dbPass);
         
-        $sql = 'SELECT * FROM users WHERE id = :id';
+        $sql = 'SELECT * FROM users WHERE id = ?';
         $stmt = $db->prepare($sql);
         $stmt->bindValue('id',$id,PDO::PARAM_INT);
         $stmt->execute();
