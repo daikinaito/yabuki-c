@@ -19,12 +19,12 @@ $dbServer = '127.0.0.1';
         
         $sql = 'SELECT * FROM users WHERE id = ?';
         $prepare = $db->prepare($sql);
-        $prepare->bindValue(1,$_GET[id],PDO::PARAM_INT);
+        $prepare->bindValue(1,$id,PDO::PARAM_INT);
         $prepare->execute();
         $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($result as $person) {
-                echo $person['id'];
+                echo $GET['id'];
                 echo ',';
                 echo $person['name'];
                 echo ',';
