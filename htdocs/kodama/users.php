@@ -24,7 +24,7 @@ $dbServer = '127.0.0.1';
         $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($result as $person) {
-                echo $GET['id'];
+                echo $_GET['id'];
                 echo ',';
                 echo $person['name'];
                 echo ',';
