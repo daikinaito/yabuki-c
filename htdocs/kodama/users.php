@@ -15,7 +15,7 @@ $dbServer = '127.0.0.1';
         $dbPass = $_SERVER['MYSQL_PASSWORD'];
         $db = new PDO($dsn, $dbUser, $dbPass);
 
-        $id=$_GET['foo'];
+        $id=$_GET['id'];
         
         $sql = 'SELECT * FROM users WHERE id = :id';
         $prepare = $db->prepare($sql);
